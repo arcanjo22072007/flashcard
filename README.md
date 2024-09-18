@@ -1,1 +1,0 @@
-arcanjo22072007/flashcard/index/index.htm/index.html.
