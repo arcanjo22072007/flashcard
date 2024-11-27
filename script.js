@@ -77,3 +77,43 @@ document.getElementById("drawCard").addEventListener("click", () => {
 playerHand = deck.splice(0, 7); // Dá 7 cartas ao jogador
 updateCurrentCard();
 updatePlayerHand();
+// Selecionar os elementos necessários
+const drawButton = document.getElementById('draw-card');
+const playButton = document.getElementById('play-card');
+const playerHand = document.querySelector('.player-hand');
+
+// Função para verificar se o jogador ganhou
+function checkWin() {
+    if (playerHand.children.length === 0) {
+        alert('Você ganhou!');
+    }
+}
+
+// Função para simular comprar uma carta
+function drawCard() {
+    // Cria uma nova carta aleatória
+    const colors = ['red', 'blue', 'green', 'yellow'];
+    const values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '+2'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    const randomValue = values[Math.floor(Math.random() * values.length)];
+    
+    const newCard = document.createElement('div');
+    newCard.classList.add('card', randomColor);
+    newCard.textContent = randomValue;
+    playerHand.appendChild(newCard);
+}
+
+// Função para jogar uma carta
+function playCard() {
+    if (playerHand.children.length > 0) {
+        // Remove a primeira carta da mão
+        playerHand.removeChild(playerHand.children[0]);
+        checkWin(); // Verifica se o jogador ganhou
+    } else {
+        alert('Não há cartas para jogar!');
+    }
+}
+
+// Adicionar eventos aos botões
+drawButton.addEventListener('click', drawCard);
+playButton.addEventListener('click', playCard);
