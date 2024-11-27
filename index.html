@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcard</title>
+    <title>Jogo de Cartas - Uno</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-        <main>
-                <section id="container">
-                        <article class="cartao">
-                                <div class="cartao__conteudo">
-                                        <h3>Programação</h3>
-                                        <div class="cartao__conteudo__pergunta">
-                                                O que é JavaScript?
-                                        </div>
-                                        <div class="cartao__conteudo__resposta">
-                                                O JavaScript é uma linguagem de programação
-                                        </div>
-                                </div>
-                        </article>
-                </section>
-        </main>
-</html> 
+    <header>
+        <h1>Jogo de Cartas Estilo Uno</h1>
+    </header>
+    <main>
+        <div id="game-board">
+            <div id="deck">
+                <button id="drawCard">Puxar Carta</button>
+            </div>
+            <div id="played-cards">
+                <h2>Carta Atual:</h2>
+                <div id="currentCard"></div>
+            </div>
+            <div id="player-hand">
+                <h2>Sua Mão:</h2>
+                <div id="hand"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Desenvolvido para aprendizado</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
